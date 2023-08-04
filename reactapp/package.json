@@ -1,5 +1,4 @@
 {
-  “start”: “PORT=8081 react-scripts start”
   "name": "reactapp",
   "version": "0.1.0",
   "private": true,

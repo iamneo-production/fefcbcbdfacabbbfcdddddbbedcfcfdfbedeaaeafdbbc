@@ -1,12 +1,30 @@
 // quizFunctions.js
 const quizData = [
     {
-        text: 'Question 1',
+                text: 'Question 1',
+                        options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+                                correctOption: 'Option 4',
+                                    },
+{
+                    text: 'Question 2',
+                                            options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+                                                                            correctOption: 'Option 1',
+                                                                                                                },
+
+{
+                    text: 'Question 3',
+                                            options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+                                                                            correctOption: 'Option 2',
+                                                                                                                },
+
+
+    {
+        text: 'Question 4',
         options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
         correctOption: 'Option 2',
     },
     {
-        text: 'Question 2',
+        text: 'Question 5',
         options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
         correctOption: 'Option 3',
     },

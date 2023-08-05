@@ -3,12 +3,12 @@ const quizData = [
     {
                 text: 'Question 1',
                         options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-                                correctOption: 'Option 4',
+                                correctOption: 'Option 2',
                                     },
 {
                     text: 'Question 2',
                                             options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-                                                                            correctOption: 'Option 1',
+                                                                            correctOption: 'Option ',
                                                                                                                 },
 
 {

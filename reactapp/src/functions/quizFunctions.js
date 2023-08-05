@@ -21,6 +21,6 @@ const quizData = [
         const currentQuestion = quizData.find((question) => question.options.includes(selectedOption));
         if (!currentQuestion) return false;
         return currentQuestion.correctOption === selectedOption;
-    };                                                                   
+    };                                                               
                                                                             
                                                                                             

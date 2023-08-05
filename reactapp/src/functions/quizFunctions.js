@@ -20,8 +20,7 @@ const quizData = [
     export const checkAnswer = (quizData, selectedOption) => {
         const currentQuestion = quizData.find((question) => question.options.includes(selectedOption));
         if (!currentQuestion) return false;
-                                                                                                                                                                                                                                                                    return currentQuestion.correctOption === selectedOption;
-                                                                                                                                                                                                                                                                                                                                                              };
-    }                                                                   
+        return currentQuestion.correctOption === selectedOption;
+    };                                                                   
                                                                             
                                                                                             

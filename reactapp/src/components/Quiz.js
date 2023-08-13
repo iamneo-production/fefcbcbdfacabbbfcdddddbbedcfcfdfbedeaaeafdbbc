@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from './UI/Card/Card';
 import Button from './UI/Button/Button';
 import { questions } from '../data'; // Import questions from data.js
 import { checkAnswers } from '../functions/quizFunctions';
-
+import './quiz.css';
 const Quiz = () => {
     const [selectedOptions, setSelectedOptions] = useState({});
     const [showResults, setShowResults] = useState(false);
     const [score, setScore] = useState(0);
+    const [isQuizStarted, setIsQuizStarted] = useState(false);
 
     const handleOptionClick = (questionId, option) => {
         setSelectedOptions({
@@ -27,10 +28,16 @@ const Quiz = () => {
         setShowResults(true);
     };
 
+    const handleStartQuiz = () => {
+        setIsQuizStarted(true);
+    };
+
     return (
         <div>
-            <h1>React Quiz Application</h1>
-            {questions.map((question) => (
+            {!isQuizStarted && (
+                <Button text="Start Quiz" onClick={handleStartQuiz} />
+            )}
+            {isQuizStarted && !showResults && questions.map((question) => (
                 <Card key={question.questionId}>
                     <h2>{question.question}</h2>
                     {question.options.map((option, index) => (
@@ -43,14 +50,14 @@ const Quiz = () => {
                     ))}
                 </Card>
             ))}
-            {!showResults && (
-                <Button text="Show Results" onClick={handleShowResults} />
-            )}
-            {showResults && (
+            {isQuizStarted && showResults && (
                 <Card>
                     <h2>Quiz Results</h2>
                     <p>Your score: {score} out of {questions.length}</p>
                 </Card>
+            )}
+            {isQuizStarted && !showResults && Object.keys(selectedOptions).length === questions.length && (
+                <Button text="Show Results" onClick={handleShowResults} />
             )}
         </div>
     );

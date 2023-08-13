@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Card from './UI/Card';
-import Button from './UI/Button';
-import { questions } from '../data'; // Replace with your trivia questions data
+import Card from './UI/Card/Card';
+import Button from './UI/Button/Button';
+import { questions } from '../data'; // Import questions from data.js
 import { checkAnswers } from '../functions/quizFunctions';
 
 const Quiz = () => {

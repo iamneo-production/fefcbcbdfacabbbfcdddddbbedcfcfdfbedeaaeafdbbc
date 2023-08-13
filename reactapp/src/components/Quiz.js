@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Card from './UI/Card';
-import Button from './UI/Button';
+import Card from './UI/Card/Card';
+import Button from './UI/Button/Button';
 import { checkAnswers } from '../functions/quizFunctions';
 
 const sampleQuestions = [

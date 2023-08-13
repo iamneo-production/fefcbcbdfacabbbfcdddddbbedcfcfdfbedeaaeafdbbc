@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "./Button"; // Assuming you have a Button component
+import Button from ".components/UI/Button/Button"; // Assuming you have a Button component
 
 class App extends Component {
   constructor(props) {

@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Button from "./Button"; // Assuming you have a Button component
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      quizStarted: false,
+      showResults: false
+    };
+  }
+
+  startQuiz = () => {
+    this.setState({
+      quizStarted: true
+    });
+  };
+
+  showResults = () => {
+    this.setState({
+      showResults: true
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>Quizz App</h1>
+        {!this.state.quizStarted && (
+          <button onClick={this.startQuiz}>Start Quiz</button>
+        )}
+        {this.state.quizStarted && !this.state.showResults && (
+          // Render the quiz questions here
+          <Button onClick={() => { /* Handle question logic */ }}>
+            Question
+          </Button>
+        )}
+        {this.state.quizStarted && this.state.showResults && (
+          <button onClick={this.showResults}>Show Results</button>
+        )}
+      </div>
+    );
+  }
 }
 
 export default App;

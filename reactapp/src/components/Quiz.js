@@ -3,7 +3,8 @@ import Card from './UI/Card/Card';
 import Button from './UI/Button/Button';
 import { questions } from '../data'; // Import questions from data.js
 import { checkAnswers } from '../functions/quizFunctions';
-import './quiz.css';
+import './quiz.css'; // Import your custom CSS file
+
 const Quiz = () => {
     const [selectedOptions, setSelectedOptions] = useState({});
     const [showResults, setShowResults] = useState(false);
@@ -33,7 +34,8 @@ const Quiz = () => {
     };
 
     return (
-        <div>
+        <div className="App">
+            <h1>React Quiz Application</h1>
             {!isQuizStarted && (
                 <Button text="Start Quiz" onClick={handleStartQuiz} />
             )}
@@ -45,6 +47,7 @@ const Quiz = () => {
                             key={index}
                             text={option}
                             onClick={() => handleOptionClick(question.questionId, option)}
+                            className={selectedOptions[question.questionId] === option ? 'selected' : ''}
                             disabled={showResults}
                         />
                     ))}

@@ -1,0 +1,61 @@
+/* Styling for the Quiz component */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.App {
+    text-align: center;
+}
+.card button.selected {
+      background-color: #ff0008;
+        color: white;
+          border-color: #007bff;
+          }
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card button {
+    margin-top: 1rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button-container button {
+    margin: 0.5rem;
+    width: 150px;
+}
+
+.results {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Additional styles can be added based on your preferences */

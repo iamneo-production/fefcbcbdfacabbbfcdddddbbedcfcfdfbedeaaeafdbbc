@@ -10,6 +10,7 @@
     "canvas": "^2.11.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.7",
+    "package.json": "^2.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "4.0.3",

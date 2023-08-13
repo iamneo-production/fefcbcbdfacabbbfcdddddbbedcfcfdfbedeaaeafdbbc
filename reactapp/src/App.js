@@ -1,70 +1,25 @@
-import React, { useState } from 'react';
-import Button from './UI/Button';
-import Card from './UI/Card';
-import { getQuizData, checkAnswer } from '../functions/quizFunctions';
+import logo from './logo.svg';
+import './App.css';
 
-const App = () => {
-  const [quizData, setQuizData] = useState(getQuizData());
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [score, setScore] = useState(0);
-  const [showResults, setShowResults] = useState(false);
-
-  const handleOptionClick = (option) => {
-    if (!showResults) {
-      setSelectedOption(option);
-    }
-  };
-
-  const handleShowResults = () => {
-    if (selectedOption !== null) {
-      const isCorrect = checkAnswer(quizData, selectedOption);
-      if (isCorrect) {
-        setScore((prevScore) => prevScore + 1);
-      }
-      setShowResults(true);
-    }
-  };
-
-  const handleRestartQuiz = () => {
-    setQuizData(getQuizData());
-    setSelectedOption(null);
-    setScore(0);
-    setShowResults(false);
-  };
-
+function App() {
   return (
-    <div className="quiz-app">
-      {quizData.map((question) => (
-        <Card key={question.id}>
-          <h3>{question.text}</h3>
-          <div className="options">
-            {question.options.map((option) => (
-              <Button
-                key={option}
-                onClick={() => handleOptionClick(option)}
-                disabled={showResults || (selectedOption !== null && selectedOption !== option)}
-              >
-                {option}
-              </Button>
-            ))}
-          </div>
-        </Card>
-      ))}
-      <div className="actions">
-        {!showResults && (
-          <Button onClick={handleShowResults} disabled={selectedOption === null}>
-            Show Results
-          </Button>
-        )}
-        {showResults && (
-          <div className="result">
-            <p>Your Score: {score}</p>
-            <Button onClick={handleRestartQuiz}>Restart Quiz</Button>
-          </div>
-        )}
-      </div>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
-};
+}
 
 export default App;
